@@ -1,0 +1,934 @@
+
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head >
+    <meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, height=device-height">
+    <title>
+Aprenda a programar gratuitamente – Grasshopper
+    </title>
+    <meta property="og:image" content="https://grasshopper.app/assets/static/images/common/grasshopper.png">
+<link href="https://grasshopper.app/" hreflang="en" rel="alternate">
+<link href="https://grasshopper.app/es_419/" hreflang="es-419" rel="alternate">
+<link href="https://grasshopper.app/pt_br/" hreflang="pt-br" rel="alternate">
+    <meta property="og:title" content="Aprenda a programar gratuitamente – Grasshopper">
+    <meta property="og:site_name" content="Grasshopper">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grasshopper.app/pt_br/">
+    <meta name="description" content="Grasshopper is the coding app for beginners. With fun, quick lessons on your phone, the app teaches adult learners to write real JavaScript.">
+    <meta property="og:description" content="Grasshopper is the coding app for beginners. With fun, quick lessons on your phone, the app teaches adult learners to write real JavaScript.">
+    <link rel="canonical" href="https://grasshopper.app/pt_br/">
+
+    <!-- Preload (Same-origin) -->
+    <link rel="preload" as="script" href="/assets/static/js/main-d7819d6a1b557c6c2f8c14681fde3abd520688a485bd449b77894b5983ace863.min.js">
+    <link rel="preload" as="style" href="/assets/static/css/main-d7a6ffc1a802a38b6b4f2db8ebd837e3cfb96dff8607a8b7daa5ea558a2b4a7a.min.css">
+    <link rel="preload" as="font" href="/assets/static/fonts/gt-america/GT-America-Standard-Regular.woff2">
+    <link rel="preload" as="font" href="/assets/static/fonts/gt-america/GT-America-Standard-Medium.woff2">
+
+    <!-- DNS Prefetch (Non-critical, Cross-origin) -->
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://stats.g.doubleclick.net" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://ssl.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://ajax.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com" />
+
+    <link rel="shortcut icon" href="/assets/static/images/common/favicon.png">
+    <link rel="stylesheet" href="/assets/static/css/main-d7a6ffc1a802a38b6b4f2db8ebd837e3cfb96dff8607a8b7daa5ea558a2b4a7a.min.css">
+
+    <script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+    <script>
+      var autotrack = new gweb.analytics.AutoTrack({
+        trackQueryParams: true,
+        profile: 'UA-87316542-3'
+      });
+    </script>
+  </head>
+  <body>
+
+<gh-banner class="banner"
+ geotarget-locales="{&#34;Brazil&#34;: &#34;pt_br&#34;}">
+  <div class="banner__container banner__container--en banner__container--default">
+<a class="banner__link" href="/pt_br/home/"><span class="banner__link__text">Grasshopper é um programa Cresça com o Google</span></a>  </div>
+  <div class="banner__container banner__container--pt_br">
+<a class="banner__link" href="/pt_br/home/"><span class="banner__link__text">Now available in Portuguese!</span></a>  </div>
+</gh-banner>
+
+<header class="header">
+  <div class="header__container">
+    <div class="header__logo" ng-class="{'delay-enable': enableLogo, 'hide': hideLogo}">
+      <h1 class="header__logo__title">Grasshopper</h1>
+      <a data-g-event="nav:click"
+        data-g-label="logo"
+        href="/pt_br/">
+        <img class="header__logo__grasshopper background-images__image--mobile" alt="Logotipo"
+        data-src="/assets/static/images/demo/demo__logo-grasshopper-lockup.svg" />
+        <img class="header__logo__grasshopper background-images__image--desktop" alt="Logotipo"
+        data-src="/assets/static/images/common/logo.blue.svg" />
+      </a>
+    </div>
+
+    <nav aria-label="main-menu" class="nav nav--main nav--left">
+      <ul role="menubar" class="nav__items">
+        <li role="presentation" class="nav__items__item ">
+          <a role="menuitem" tabindex="0"
+            data-g-event="nav:click"
+            data-g-label="what-is-coding"
+            href="/pt_br/what-is-coding/">O que é programação</a>
+        </li>
+        <li role="presentation" class="nav__items__item ">
+          <a role="menuitem" tabindex="0"
+            data-g-event="nav:click"
+            data-g-label="about-us"
+            href="/pt_br/about/">Quem somos</a>
+        </li>
+        <li role="presentation" class="nav__items__item ">
+          <a role="menuitem" tabindex="0"
+            data-g-event="nav:click"
+            data-g-label="faq"
+            href="/pt_br/faq/">Perguntas frequentes</a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav aria-label="user-menu" class="nav nav--main nav--right">
+      <ul role="menubar" class="nav__items">
+        <li role="presentation" class="nav__items__item nav__items__item--not-ie">
+          <a role="menuitem" tabindex="0" href="https://ghop.page.link/signin-cta"
+            data-g-event="nav:click"
+            data-g-label="sign-in">Fazer login</a>
+        </li>
+        <li role="presentation" class="nav__items__item nav__items__item--button nav__items__item--ie-only">
+          <a role="menuitem" tabindex="0"
+            data-g-event="nav:click"
+            data-g-label="get-the-app"
+            class="button" ng-click="ghModal = !ghModal">
+            <span class="button__label">Instalar o app</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav aria-label="mobile-menu" class="nav nav--mobile" gh-mobile-menu>
+      <div class="nav__menu-icon" ng-click="hideLogo = true; enableLogo = false" gh-mobile-menu-open-button></div>
+      <div class="nav__menu nav__menu--off-canvas" gh-mobile-menu-wrapper>
+        <div class="nav__logo">
+          <a tabindex="-1" data-g-event="nav:click"
+            data-g-label="logotipo-do-grasshopper"
+            href="/">
+            <img class="header__logo__gh-icon" src="/assets/static/images/common/gh_icon.svg" alt="Logotipo do Grasshopper" />
+          </a>
+        </div>
+        <div class="nav__close-icon" ng-click="enableLogo = true; hideLogo = false" gh-mobile-menu-close-button></div>
+        <ul role="menubar" class="nav__items">
+            <li role="presentation"
+              data-g-event="nav:click"
+              data-g-label="what-is-coding"
+              class="nav__items__item ">
+            <a role="menuitem" tabindex="-1" href="/pt_br/what-is-coding/">O que é programação</a>
+          </li>
+            <li role="presentation"
+              data-g-event="nav:click"
+              data-g-label="about-us"
+              class="nav__items__item ">
+            <a role="menuitem" tabindex="-1" href="/pt_br/about/">Quem somos</a>
+          </li>
+            <li role="presentation"
+              data-g-event="nav:click"
+              data-g-label="faq"
+              class="nav__items__item ">
+            <a role="menuitem" tabindex="-1" href="/pt_br/faq/">Perguntas frequentes</a>
+          </li>
+
+          <li role="presentation" class="nav__items__item nav__items__item--button">
+            <a role="menuitem" tabindex="-1" href="https://itunes.apple.com/us/app/id1354133284" data-utm-rewrite="" data-g-event="cta:click" data-g-label="get-the-app" class="cta__item cta-button get-the-app ios">
+              <span class="cta-button__label">
+                <span class="cta-button__label__label">Instalar o app</span>
+              </span>
+            </a>
+            <a role="menuitem" tabindex="-1" href="https://play.google.com/store/apps/details?id=com.area120.grasshopper" data-utm-rewrite="" data-ak-update-params-serialize-into-key="referrer" data-g-event="cta:click" data-g-label="get-the-app" class="cta__item cta-button get-the-app android">
+              <span class="cta-button__label">
+                <span class="cta-button__label__label">Instalar o app</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="header__container header__container--scroll" gh-header-scroll>
+    <div class="header__logo">
+      <h1 class="header__logo__title">Grasshopper</h1>
+      <a tabindex="-1" data-g-event="nav:click"
+        data-g-label="logotipo-do-grasshopper"
+        href="/pt_br/">
+        <img class="header__logo__gh-icon" data-src="/assets/static/images/common/gh_icon.svg" alt="Logotipo do Grasshopper"/>
+      </a>
+    </div>
+
+    <nav aria-label="scroll-menu-left" class="nav nav--scroll nav--left">
+      <ul role="menubar" class="nav__items">
+        <li role="presentation" class="nav__items__item ">
+          <a role="menuitem" tabindex="-1"
+            data-g-event="nav:click"
+            data-g-label="what-is-coding"
+            href="/pt_br/what-is-coding/">O que é programação</a>
+        </li>
+        <li role="presentation" class="nav__items__item ">
+          <a role="menuitem" tabindex="-1"
+            data-g-event="nav:click"
+            data-g-label="about-us"
+            href="/pt_br/about/">Quem somos</a>
+        </li>
+        <li role="presentation" class="nav__items__item ">
+          <a role="menuitem" tabindex="-1"
+            data-g-event="nav:click"
+            data-g-label="faq"
+            href="/pt_br/faq/">Perguntas frequentes</a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav aria-label="scroll-menu-right" class="nav nav--scroll nav--right">
+      <ul role="menubar" class="nav__items">
+        <li role="presentation" class="nav__items__item nav__items__item--not-ie">
+          <a role="menuitem" tabindex="-1" href="https://ghop.page.link/signin-cta"
+            data-g-event="nav:click"
+            data-g-label="sign-in">Fazer login</a>
+        </li>
+        <li role="presentation" class="nav__items__item nav__items__item--button nav__items__item--ie-only">
+          <a role="menuitem" tabindex="-1"
+            data-g-event="nav:click"
+            data-g-label="get-the-app"
+            class="button" ng-click="ghModal = !ghModal">
+            <span class="button__label">Instalar o app</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="header__modal"
+       ng-class="{'header__modal--active': ghModal}">
+    <div class="header__modal__wrapper" ng-click="ghModal = !ghModal"></div>
+    <div class="header__modal__window">
+      <div class="header__modal__close" ng-click="ghModal = !ghModal"></div>
+      <div class="header__modal__title">Download the free Grasshopper app</div>
+      <div class="header__modal__ctas ctas ctas--desktop">
+          <a href="https://play.google.com/store/apps/details?id=com.area120.grasshopper"
+  data-utm-rewrite
+    data-ak-update-params-serialize-into-key="referrer"
+  data-g-event="cta:click"
+  data-g-label="google-play"
+  class="cta__item cta-button google-play">
+  <span class="cta-button__label">
+   <span class="cta-button__label__label">Google Play</span>
+</span>
+</a>
+
+          <a href="https://itunes.apple.com/us/app/id1354133284"
+  data-utm-rewrite
+  data-g-event="cta:click"
+  data-g-label="app-store"
+  class="cta__item cta-button apple-itunes">
+  <span class="cta-button__label">
+   <span class="cta-button__label__label">App Store</span>
+</span>
+</a>
+
+      </div>
+    </div>
+  </div>
+</header>    <section class="main">
+
+<section class="hero hero--light-grey"
+ng-controller="GhHeroController as hero">
+  <div class="hero__background-images background-images">
+      <div class="hero__background-images__image background-images__image lazy-image background-images__image--desktop background-images__image--background-hills" data-src="/assets/static/images/hero/hero__background-hills.svg"></div>
+      <div class="hero__background-images__image background-images__image lazy-image background-images__image--desktop background-images__image--bush-dark background-images__image--bush-dark-2" data-src="/assets/static/images/hero/hero__bush-dark.svg"></div>
+      <div class="hero__background-images__image background-images__image lazy-image background-images__image--desktop background-images__image--bush-light" data-src="/assets/static/images/hero/hero__bush-light.svg"></div>
+      <div class="hero__background-images__image background-images__image lazy-image background-images__image--desktop background-images__image--macbook" data-src="/assets/static/images/hero/hero__macbook.png"></div>
+      <div class="hero__background-images__image background-images__image lazy-image background-images__image--desktop background-images__image--tree-dark" data-src="/assets/static/images/hero/hero__tree-dark.svg"></div>
+      <div class="hero__background-images__image background-images__image lazy-image background-images__image--desktop background-images__image--tree-skinny" data-src="/assets/static/images/hero/hero__tree-skinny.svg"></div>
+      <div class="hero__background-images__image background-images__image lazy-image background-images__image--desktop background-images__image--grasshopper" data-src="/assets/static/images/hero/hero__grasshopper.svg"></div>
+      <div class="hero__background-images__image background-images__image lazy-image background-images__image--desktop background-images__image--android-device" data-src="/assets/static/images/hero/hero__pixel@pt_BR.png"></div>
+      <div class="hero__background-images__image background-images__image lazy-image background-images__image--mobile background-images__image--background-hills" data-src="/assets/static/images/hero/hero__background-hills.svg"></div>
+      <div class="hero__background-images__image background-images__image lazy-image background-images__image--mobile background-images__image--bush-dark background-images__image--bush-dark-1" data-src="/assets/static/images/hero/hero__bush-dark.svg"></div>
+      <div class="hero__background-images__image background-images__image lazy-image background-images__image--mobile background-images__image--bush-light" data-src="/assets/static/images/hero/hero__bush-light.svg"></div>
+      <div class="hero__background-images__image background-images__image lazy-image background-images__image--mobile background-images__image--hero_ios" data-src="/assets/static/images/hero/hero__ios.png"></div>
+      <div class="hero__background-images__image background-images__image lazy-image background-images__image--mobile background-images__image--hero_android" data-src="/assets/static/images/hero/hero__pixel@pt_BR.png"></div>
+  </div>
+
+  <div class="hero__container">
+
+    <h1 class="hero__title">Este é o Grasshopper,<br/>o app de programação para iniciantes</h1>
+    <div class="hero__subtitle">Aprender a programar <span class="hero__subtitle__options"><span class="hero__subtitle__options__wrapper hero__subtitle__options__wrapper--reverse-order"><span class="hero__subtitle__options__option">gera novas oportunidades</span><span class="hero__subtitle__options__option">cria novos hobbies</span><span class="hero__subtitle__options__option">abre caminho para uma nova carreira</span><span class="hero__subtitle__options__option">desenvolve novas habilidades</span><span class="hero__subtitle__options__option">expande sua rede de contatos</span><span class="hero__subtitle__options__option">gera novas oportunidades</span><span class="hero__subtitle__options__option">cria novos hobbies</span><span class="hero__subtitle__options__option">abre caminho para uma nova carreira</span><span class="hero__subtitle__options__option">desenvolve novas habilidades</span><span class="hero__subtitle__options__option">expande sua rede de contatos</span><span class="hero__subtitle__options__option">gera novas oportunidades</span><span class="hero__subtitle__options__option">cria novos hobbies</span><span class="hero__subtitle__options__option">abre caminho para uma nova carreira</span><span class="hero__subtitle__options__option">desenvolve novas habilidades</span><span class="hero__subtitle__options__option">expande sua rede de contatos</span><span class="hero__subtitle__options__option">gera novas oportunidades</span><span class="hero__subtitle__options__option">cria novos hobbies</span><span class="hero__subtitle__options__option">abre caminho para uma nova carreira</span><span class="hero__subtitle__options__option">desenvolve novas habilidades</span><span class="hero__subtitle__options__option">expande sua rede de contatos</span></span></span></div>
+
+    <div class="hero__ctas ctas ctas--desktop">
+        <a href="https://ghop.page.link/main-cta"
+  data-utm-rewrite
+  data-g-event="cta:click"
+  data-g-label="start-coding-today"
+  class="cta__item cta-button start-coding not-ie">
+  <span class="cta-button__label">
+   <span class="cta-button__label__label">Comece a programar hoje</span>
+</span>
+</a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.area120.grasshopper"
+  data-utm-rewrite
+    data-ak-update-params-serialize-into-key="referrer"
+  data-g-event="cta:click"
+  data-g-label="google-play"
+  class="cta__item cta-button google-play ie-only no-left-margin">
+  <span class="cta-button__label">
+   <span class="cta-button__label__label">Google Play</span>
+</span>
+</a>
+
+        <a href="https://itunes.apple.com/us/app/id1354133284"
+  data-utm-rewrite
+  data-g-event="cta:click"
+  data-g-label="app-store"
+  class="cta__item cta-button apple-itunes ie-only">
+  <span class="cta-button__label">
+   <span class="cta-button__label__label">App Store</span>
+</span>
+</a>
+
+    </div>
+
+    <div class="hero__ctas ctas ctas--mobile">
+        <a href="https://itunes.apple.com/us/app/id1354133284"
+  data-utm-rewrite
+  data-g-event="cta:click"
+  data-g-label="start-coding-today"
+  class="cta__item cta-button start-coding ios">
+  <span class="cta-button__label">
+   <span class="cta-button__label__label">Comece a programar hoje</span>
+</span>
+</a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.area120.grasshopper"
+  data-utm-rewrite
+    data-ak-update-params-serialize-into-key="referrer"
+  data-g-event="cta:click"
+  data-g-label="start-coding-today"
+  class="cta__item cta-button start-coding android">
+  <span class="cta-button__label">
+   <span class="cta-button__label__label">Comece a programar hoje</span>
+</span>
+</a>
+
+    </div>
+  </div>
+
+
+</section><section class="section-touts section-touts--light-green">
+  <div class="section-touts__container">
+    <h2 class="section-touts__title">A melhor maneira de começar sua jornada na programação.</h2>
+
+    <ul class="section-touts__group">
+      <li class="section-touts__item section-touts__item--learn">
+        <div class="section-touts__item__content">
+          <div class="section-touts__item__image">
+            <img data-src="/assets/static/images/home-touts/adventure__waving.svg" alt="">
+          </div>
+          <div class="section-touts__item__body">Aprenda com lições divertidas e rápidas no seu smartphone que ensinam você a programar em JavaScript.</div>
+        </div>
+      </li>
+      <li class="section-touts__item section-touts__item--move">
+        <div class="section-touts__item__content">
+          <div class="section-touts__item__image">
+            <img data-src="/assets/static/images/home-touts/adventure__coding.svg" alt="">
+          </div>
+          <div class="section-touts__item__body">Passe por níveis cada vez mais desafiadores enquanto desenvolve suas habilidades.</div>
+        </div>
+      </li>
+      <li class="section-touts__item section-touts__item--graduate">
+        <div class="section-touts__item__content">
+          <div class="section-touts__item__image">
+            <img data-src="/assets/static/images/home-touts/adventure__journey.svg" alt="">
+          </div>
+          <div class="section-touts__item__body">Aprenda habilidades importantes de programação para sua nova fase nessa área.</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section><section class="section-stories section-stories--light-grey"
+         ng-controller="GhSlickController as slick"
+         ng-init="slick.init({&#34;dots&#34;: true, &#34;slidesToShow&#34;: 1, &#34;appendDots&#34;: &#34;.section-stories__pagination&#34;, &#34;centerMode&#34;: true, &#34;slidesToScroll&#34;: 1, &#34;centerPadding&#34;: &#34;20px&#34;, &#34;arrows&#34;: false, &#34;accessibility&#34;: true, &#34;draggable&#34;: false, &#34;infinite&#34;: true, &#34;variableWidth&#34;: true, &#34;galleryId&#34;: &#34;stories&#34;, &#34;speed&#34;: 2000, &#34;autoplaySpeed&#34;: 2000, &#34;focusOnSelect&#34;: true, &#34;autoplay&#34;: true})">
+  <div class="section-stories__container">
+    <div class="section-stories__header">
+      <h2 class="section-stories__title">Histórias do Grasshopper</h2>
+    </div>
+
+    <div id="stories" class="section-stories__group">
+      <div class="section-stories__item section-stories__item--0">
+        <div class="section-stories__item__image">
+          <img src="/assets/static/images/home-stories/user1.jpg" alt="">
+        </div>
+        <div class="section-stories__item__content">
+          <div class="section-stories__item__body">O Grasshopper me mostrou que qualquer um pode aprender a programar. Não importa o que, quem ou como eu me pareço. Estou empolgado. A programação abriu um mundo totalmente novo para mim.</div>
+          <div class="section-stories__item__customer_name">Ismael</div>
+          <div class="section-stories__item__customer_location"></div>
+        </div>
+      </div>
+      <div class="section-stories__item section-stories__item--1">
+        <div class="section-stories__item__image">
+          <img src="/assets/static/images/home-stories/user2.jpg" alt="">
+        </div>
+        <div class="section-stories__item__content">
+          <div class="section-stories__item__body">Eu gosto do Grasshopper porque ele permite que qualquer pessoa com ou sem experiência em programação comece imediatamente a aprender de forma divertida.</div>
+          <div class="section-stories__item__customer_name">Brianna</div>
+          <div class="section-stories__item__customer_location"></div>
+        </div>
+      </div>
+      <div class="section-stories__item section-stories__item--2">
+        <div class="section-stories__item__image">
+          <img src="/assets/static/images/home-stories/user3.jpg" alt="">
+        </div>
+        <div class="section-stories__item__content">
+          <div class="section-stories__item__body">O Grasshopper me ajudou a entender os princípios básicos da programação. Agora, eu consigo me ver trabalhando nessa área.</div>
+          <div class="section-stories__item__customer_name">Zhamal</div>
+          <div class="section-stories__item__customer_location"></div>
+        </div>
+      </div>
+      <div class="section-stories__item section-stories__item--3">
+        <div class="section-stories__item__image">
+          <img src="/assets/static/images/home-stories/user4.jpg" alt="">
+        </div>
+        <div class="section-stories__item__content">
+          <div class="section-stories__item__body">Este é o app interativo mais fácil de usar [em que] os desafios são estruturados como quebra-cabeças que pedem para você preencher as lacunas, [além de] animações e efeitos... que mostram como o código pode dar vida às coisas.</div>
+          <div class="section-stories__item__customer_name">Alverson</div>
+          <div class="section-stories__item__customer_location"></div>
+        </div>
+      </div>
+    </div>
+    <nav class="section-stories__pagination"></nav>
+  </div>
+</section>
+
+<section class="section-columns section-columns--full-width section-columns--learn-to-code section-columns--turquoise"
+>
+  <div class="section-columns__background-images background-images">
+      <div class="section-columns__background-images__image background-images__image lazy-image background-images__image--grasshopper-meditate" data-src="/assets/static/images/home-learn-to-code/grasshopper__practice__meditate.svg"></div>
+      <div class="section-columns__background-images__image background-images__image lazy-image background-images__image--devices" data-src="/assets/static/images/home-learn-to-code/devices.svg"></div>
+  </div>
+  <div class="section-columns__container">
+    <div class="section-columns__column section-columns__column--one-column">
+
+      <div class="section-columns__column__images">
+          <div class="section-columns__column__image section-columns__column__image--android">
+            <img data-src="/assets/static/images/home-learn-to-code/icons__android.png" alt="Animar" />
+          </div>
+      </div>
+
+
+      <div class="section-columns__column__title">Aprenda a programar em qualquer lugar.</div>
+
+
+      <div class="section-columns__column__body">O Grasshopper está disponível para Android e todos os navegadores da Web. Seu progresso é sincronizado perfeitamente em todos os dispositivos.</div>
+
+
+
+
+
+
+    </div>
+  </div>
+</section>
+
+<section class="section-columns section-columns--feature-carousel section-columns--light-grey"
+         ng-controller="GhCarouselController as carouselCtrl"
+         ng-init="carouselCtrl.init({&#34;infinite&#34;: true, &#34;startSlide&#34;: 0, &#34;speed&#34;: 3000, &#34;autoplay&#34;: true})"
+>
+<div class="section-animated-background">
+  <div class="section-animated-background__container">
+    <svg class="section-animated-background__svg-square section-animated-background__svg-square--1" width="50px" height="50px" viewBox="0 0 50 50">
+      <rect class="section-animated-background__square" x="0.77398322" y="0.397442376" width="50" height="50"></rect>
+    </svg>
+    <svg class="section-animated-background__svg-square section-animated-background__svg-square--2" width="50px" height="50px" viewBox="0 0 50 50">
+      <rect class="section-animated-background__square" x="0.77398322" y="0.397442376" width="50" height="50"></rect>
+    </svg>
+    <svg class="section-animated-background__svg-square section-animated-background__svg-square--3" width="50px" height="50px" viewBox="0 0 50 50">
+      <rect class="section-animated-background__square" x="0.77398322" y="0.397442376" width="50" height="50"></rect>
+    </svg>
+    <svg class="section-animated-background__svg-square section-animated-background__svg-square--4" width="50px" height="50px" viewBox="0 0 50 50">
+      <rect class="section-animated-background__square" x="0.77398322" y="0.397442376" width="50" height="50"></rect>
+    </svg>
+    <svg class="section-animated-background__svg-square section-animated-background__svg-square--5" width="50px" height="50px" viewBox="0 0 50 50">
+      <rect class="section-animated-background__square" x="0.77398322" y="0.397442376" width="50" height="50"></rect>
+    </svg>
+    <svg class="section-animated-background__svg-square section-animated-background__svg-square--6" width="50px" height="50px" viewBox="0 0 50 50">
+      <rect class="section-animated-background__square" x="0.77398322" y="0.397442376" width="50" height="50"></rect>
+    </svg>
+    <svg class="section-animated-background__svg-square section-animated-background__svg-square--7" width="50px" height="50px" viewBox="0 0 50 50">
+      <rect class="section-animated-background__square" x="0.77398322" y="0.397442376" width="50" height="50"></rect>
+    </svg>
+    <svg class="section-animated-background__svg-square section-animated-background__svg-square--8" width="50px" height="50px" viewBox="0 0 50 50">
+      <rect class="section-animated-background__square" x="0.77398322" y="0.397442376" width="50" height="50"></rect>
+    </svg>
+    <svg class="section-animated-background__svg-square section-animated-background__svg-square--9" width="50px" height="50px" viewBox="0 0 50 50">
+      <rect class="section-animated-background__square" x="0.77398322" y="0.397442376" width="50" height="50"></rect>
+    </svg>
+    <svg class="section-animated-background__svg-square section-animated-background__svg-square--10" width="50px" height="50px" viewBox="0 0 50 50">
+      <rect class="section-animated-background__square" x="0.77398322" y="0.397442376" width="50" height="50"></rect>
+    </svg>
+    <svg class="section-animated-background__svg-square section-animated-background__svg-square--11" width="50px" height="50px" viewBox="0 0 50 50">
+      <rect class="section-animated-background__square" x="0.77398322" y="0.397442376" width="50" height="50"></rect>
+    </svg>
+    <svg class="section-animated-background__svg-box section-animated-background__svg-box--1" width="190px" height="190px" viewBox="0 0 190 190">
+      <defs>
+        <rect id="path-1" x="1" y="1" width="17.2335861" height="17.2335861"></rect>
+        <rect id="path-2" x="1" y="173.335861" width="17.2335861" height="17.2335861"></rect>
+        <rect id="path-3" x="173.335861" y="1" width="17.2335861" height="17.2335861"></rect>
+        <rect id="path-4" x="173.335861" y="173.335861" width="17.2335861" height="17.2335861"></rect>
+      </defs>
+      <g id="Group-4-Copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#B9B9B9" stroke-width="2" transform="translate(95.784724, 95.784724) rotate(-360.000000) translate(-95.784724, -95.784724) " x="8.4625948" y="8.4625948" width="174.644258" height="174.644258"></rect>
+        <g id="Rectangle-2">
+          <use fill="#4A4A4A" fill-rule="evenodd" xlink:href="#path-1"></use>
+          <rect stroke="#4A4A4A" stroke-width="2" x="2" y="2" width="15.2335861" height="15.2335861"></rect>
+        </g>
+        <g id="Rectangle-2-Copy-2">
+          <use fill="#4A4A4A" fill-rule="evenodd" xlink:href="#path-2"></use>
+          <rect stroke="#4A4A4A" stroke-width="2" x="2" y="174.335861" width="15.2335861" height="15.2335861"></rect>
+        </g>
+        <g id="Rectangle-2-Copy">
+          <use fill="#4A4A4A" fill-rule="evenodd" xlink:href="#path-3"></use>
+          <rect stroke="#4A4A4A" stroke-width="2" x="174.335861" y="2" width="15.2335861" height="15.2335861"></rect>
+        </g>
+        <g id="Rectangle-2-Copy-3">
+          <use fill="#4A4A4A" fill-rule="evenodd" xlink:href="#path-4"></use>
+          <rect stroke="#4A4A4A" stroke-width="2" x="174.335861" y="174.335861" width="15.2335861" height="15.2335861"></rect>
+        </g>
+      </g>
+    </svg>
+    <svg class="section-animated-background__svg-box section-animated-background__svg-box--2" width="190px" height="190px" viewBox="0 0 190 190">
+      <defs>
+        <rect id="path-1" x="1" y="1" width="17.2335861" height="17.2335861"></rect>
+        <rect id="path-2" x="1" y="173.335861" width="17.2335861" height="17.2335861"></rect>
+        <rect id="path-3" x="173.335861" y="1" width="17.2335861" height="17.2335861"></rect>
+        <rect id="path-4" x="173.335861" y="173.335861" width="17.2335861" height="17.2335861"></rect>
+      </defs>
+      <g id="Group-4-Copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#B9B9B9" stroke-width="2" transform="translate(95.784724, 95.784724) rotate(-360.000000) translate(-95.784724, -95.784724) " x="8.4625948" y="8.4625948" width="174.644258" height="174.644258"></rect>
+        <g id="Rectangle-2">
+          <use fill="#4A4A4A" fill-rule="evenodd" xlink:href="#path-1"></use>
+          <rect stroke="#4A4A4A" stroke-width="2" x="2" y="2" width="15.2335861" height="15.2335861"></rect>
+        </g>
+        <g id="Rectangle-2-Copy-2">
+          <use fill="#4A4A4A" fill-rule="evenodd" xlink:href="#path-2"></use>
+          <rect stroke="#4A4A4A" stroke-width="2" x="2" y="174.335861" width="15.2335861" height="15.2335861"></rect>
+        </g>
+        <g id="Rectangle-2-Copy">
+          <use fill="#4A4A4A" fill-rule="evenodd" xlink:href="#path-3"></use>
+          <rect stroke="#4A4A4A" stroke-width="2" x="174.335861" y="2" width="15.2335861" height="15.2335861"></rect>
+        </g>
+        <g id="Rectangle-2-Copy-3">
+          <use fill="#4A4A4A" fill-rule="evenodd" xlink:href="#path-4"></use>
+          <rect stroke="#4A4A4A" stroke-width="2" x="174.335861" y="174.335861" width="15.2335861" height="15.2335861"></rect>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>  <div class="section-columns__container">
+    <div class="section-columns__column section-columns__column--two-column section-columns__column--feature-details section-columns__column--desktop-only">
+
+
+
+
+      <div class="section-columns__column__titles section-columns__column__titles--features">
+        <div class="section-columns__column__title section-columns__column__title--visual-puzzles"
+             ng-class="{'section-columns__column__title--active': carouselCtrl.isActiveSlide(0)}" ng-cloak
+>
+             Os quebra-cabeças visuais desenvolvem suas habilidades de resolução de problemas e ensinam conceitos de programação.
+        </div>
+        <div class="section-columns__column__title section-columns__column__title--laptop-tablet"
+             ng-class="{'section-columns__column__title--active': carouselCtrl.isActiveSlide(1)}" ng-cloak
+>
+             Coloque seu aprendizado em prática com projetos completos no seu laptop ou tablet.
+        </div>
+        <div class="section-columns__column__title section-columns__column__title--industry-standard"
+             ng-class="{'section-columns__column__title--active': carouselCtrl.isActiveSlide(2)}" ng-cloak
+>
+             Use o JavaScript padrão do setor com apenas alguns toques no seu smartphone.
+        </div>
+        <div class="section-columns__column__title section-columns__column__title--feedback"
+             ng-class="{'section-columns__column__title--active': carouselCtrl.isActiveSlide(3)}" ng-cloak
+>
+             O feedback em tempo real orienta você como se fosse um professor.
+        </div>
+        <div class="section-columns__column__title section-columns__column__title--achievements"
+             ng-class="{'section-columns__column__title--active': carouselCtrl.isActiveSlide(4)}" ng-cloak
+>
+             Acumule conquistas à medida que aprende novas habilidades.
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="section-columns__column__carousel">
+        <ul class="carousel__dots">
+          <li class="carousel__dots__dot"
+              ng-repeat="slide in carouselCtrl.slides"
+              ng-class="{'carousel__dots__dot--active': carouselCtrl.isActiveSlide($index)}"
+              ng-click="carouselCtrl.setCurrentSlide($index)"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="section-columns__column section-columns__column--two-column section-columns__column--handheld-device section-columns__column--desktop-only">
+
+
+      <div class="section-columns__column__slides section-columns__column__slides--features-embedded">
+        <div class="section-columns__column__slide section-columns__column__slide--0 section-columns__column__slide--hand-with-device"
+             ng-class="{
+               'section-columns__column__slide--active': carouselCtrl.isActiveSlide(0),
+               'section-columns__column__slide--previous': carouselCtrl.isPreviousSlide(0)
+             }" ng-cloak>
+          <img data-src="/assets/static/images/common/feature-carousel/slide__device-screen-1.png" alt="Animar"/>
+        </div>
+        <div class="section-columns__column__slide section-columns__column__slide--1 section-columns__column__slide--laptop"
+             ng-class="{
+               'section-columns__column__slide--active': carouselCtrl.isActiveSlide(1),
+               'section-columns__column__slide--previous': carouselCtrl.isPreviousSlide(1)
+             }" ng-cloak>
+          <img data-src="/assets/static/images/common/feature-carousel/slide__device-screen-laptop.png" alt="Animar"/>
+        </div>
+        <div class="section-columns__column__slide section-columns__column__slide--2 section-columns__column__slide--hand-with-device"
+             ng-class="{
+               'section-columns__column__slide--active': carouselCtrl.isActiveSlide(2),
+               'section-columns__column__slide--previous': carouselCtrl.isPreviousSlide(2)
+             }" ng-cloak>
+          <img data-src="/assets/static/images/common/feature-carousel/slide__device-screen-2.png" alt="Animar"/>
+        </div>
+        <div class="section-columns__column__slide section-columns__column__slide--3 section-columns__column__slide--hand-with-device"
+             ng-class="{
+               'section-columns__column__slide--active': carouselCtrl.isActiveSlide(3),
+               'section-columns__column__slide--previous': carouselCtrl.isPreviousSlide(3)
+             }" ng-cloak>
+          <img data-src="/assets/static/images/common/feature-carousel/slide__device-screen-3.png" alt="Animar"/>
+        </div>
+        <div class="section-columns__column__slide section-columns__column__slide--4 section-columns__column__slide--hand-with-device"
+             ng-class="{
+               'section-columns__column__slide--active': carouselCtrl.isActiveSlide(4),
+               'section-columns__column__slide--previous': carouselCtrl.isPreviousSlide(4)
+             }" ng-cloak>
+          <img data-src="/assets/static/images/common/feature-carousel/slide__device-screen-4@pt_BR.png" alt="Animar"/>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+    <div class="section-columns__column section-columns__column--one-column section-columns__column--mobile-only">
+
+      <div class="section-columns__column__images">
+          <div class="section-columns__column__image section-columns__column__image--ios">
+            <img data-src="/assets/static/images/common/feature__ios-1.png" alt="Animar" />
+          </div>
+          <div class="section-columns__column__image section-columns__column__image--android">
+            <img data-src="/assets/static/images/common/feature__android-1.png" alt="Animar" />
+          </div>
+      </div>
+
+
+      <div class="section-columns__column__title section-columns__column__title--visual-puzzles">Os quebra-cabeças visuais desenvolvem suas habilidades de resolução de problemas e ensinam conceitos de programação.</div>
+
+
+
+
+
+
+
+    </div>
+    <div class="section-columns__column section-columns__column--one-column section-columns__column--mobile-only">
+
+      <div class="section-columns__column__images">
+          <div class="section-columns__column__image section-columns__column__image--ios">
+            <img data-src="/assets/static/images/common/feature__ios-2.png" alt="Animar" />
+          </div>
+          <div class="section-columns__column__image section-columns__column__image--android">
+            <img data-src="/assets/static/images/common/feature__android-2.png" alt="Animar" />
+          </div>
+      </div>
+
+
+      <div class="section-columns__column__title section-columns__column__title--industry-standard">Use o JavaScript padrão do setor com apenas alguns toques no seu smartphone.</div>
+
+
+
+
+
+
+
+    </div>
+    <div class="section-columns__column section-columns__column--one-column section-columns__column--mobile-only">
+
+      <div class="section-columns__column__images">
+          <div class="section-columns__column__image section-columns__column__image--ios">
+            <img data-src="/assets/static/images/common/feature__ios-3.png" alt="Animar" />
+          </div>
+          <div class="section-columns__column__image section-columns__column__image--android">
+            <img data-src="/assets/static/images/common/feature__android-3.png" alt="Animar" />
+          </div>
+      </div>
+
+
+      <div class="section-columns__column__title section-columns__column__title--feedback">O feedback em tempo real orienta você como se fosse um professor.</div>
+
+
+
+
+
+
+
+    </div>
+    <div class="section-columns__column section-columns__column--one-column section-columns__column--mobile-only">
+
+      <div class="section-columns__column__images">
+          <div class="section-columns__column__image section-columns__column__image--ios">
+            <img data-src="/assets/static/images/common/feature__ios-4.png" alt="Animar" />
+          </div>
+          <div class="section-columns__column__image section-columns__column__image--android">
+            <img data-src="/assets/static/images/common/feature__android-4.png" alt="Animar" />
+          </div>
+      </div>
+
+
+      <div class="section-columns__column__title section-columns__column__title--achievements">Acumule conquistas à medida que aprende novas habilidades.</div>
+
+
+
+
+
+
+
+    </div>
+    <div class="section-columns__column section-columns__column--one-column section-columns__column--mobile-only section-columns__column--max-width">
+
+      <div class="section-columns__column__images">
+          <div class="section-columns__column__image">
+            <img data-src="/assets/static/images/common/feature__laptop.png" alt="Animar" />
+          </div>
+      </div>
+
+
+      <div class="section-columns__column__title section-columns__column__title--laptop-tablet">Coloque seu aprendizado em prática com projetos completos no seu laptop ou tablet.</div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</section>
+
+<section class="section-columns section-columns--concepts section-columns--light-grey"
+>
+  <div class="section-columns__container">
+    <div class="section-columns__column section-columns__column--one-column">
+
+
+
+      <div class="section-columns__column__title">Aprenda conceitos que se aplicam a qualquer linguagem de programação</div>
+
+
+      <div class="section-columns__column__body section-columns__column__body--row-1"><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--1">Fluxo de controle</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--2">Funções</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--3">Variáveis</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--4">Edição de objetos</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--5">Animação</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--6">Callbacks</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--7">Métodos de matriz</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--8">Operadores</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--9">Recorrência</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--10">Manipulação de string</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--11">Repetições</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--12">Ordem de execução</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--13">Declaração de função</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--14">Instruções If</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--15">Estruturas de dados</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--16">Escopo de variáveis</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--17">Repetições For...Of</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--18">e muito mais...</p></div>
+
+
+      <div class="section-columns__column__body section-columns__column__body--row-2"><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--1">Callbacks</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--2">Métodos de matriz</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--3">Operadores</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--4">Recorrência</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--5">Manipulação de string</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--6">Repetições</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--7">Ordem de execução</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--8">Declaração de função</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--9">Instruções If</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--10">Estruturas de dados</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--11">Escopo de variáveis</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--12">Repetições For...Of</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--13">Fluxo de controle</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--14">Funções</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--15">Variáveis</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--16">Edição de objetos</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--17">Animação</p></div>
+
+
+      <div class="section-columns__column__body section-columns__column__body--row-3"><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--1">Repetições</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--2">Ordem de execução</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--3">Declaração de função</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--4">Instruções If</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--5">Estruturas de dados</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--6">Escopo de variáveis</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--7">Repetições For...Of</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--8">Fluxo de controle</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--9">Funções</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--10">Variáveis</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--11">Edição de objetos</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--12">Animação</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--13">Callbacks</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--14">Métodos de matriz</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--15">Operadores</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--16">Recorrência</p><p class="section-columns__column__body__paragraph section-columns__column__body__paragraph--17">Manipulação de string</p></div>
+
+
+
+
+    </div>
+  </div>
+</section>
+
+<section class="section-columns section-columns--full-width section-columns--get-started section-columns--turquoise"
+>
+  <div class="section-columns__background-images background-images">
+      <div class="section-columns__background-images__image background-images__image lazy-image background-images__image--cloud-1" data-src="/assets/static/images/section-get-started/section--get-started__cloud.svg"></div>
+      <div class="section-columns__background-images__image background-images__image lazy-image background-images__image--cloud-2" data-src="/assets/static/images/section-get-started/section--get-started__cloud.svg"></div>
+      <div class="section-columns__background-images__image background-images__image lazy-image background-images__image--cloud-3" data-src="/assets/static/images/section-get-started/section--get-started__cloud.svg"></div>
+      <div class="section-columns__background-images__image background-images__image lazy-image background-images__image--grasshopper-mama" data-src="/assets/static/images/section-get-started/section--get-started__grasshopper-mama.svg"></div>
+  </div>
+  <div class="section-columns__container">
+    <div class="section-columns__column section-columns__column--two-column section-columns__column--mobile-1x1 section-columns__column--large-title">
+
+
+
+      <div class="section-columns__column__title">Comece sua jornada na programação com o Grasshopper.</div>
+
+
+
+
+
+      <div class="section-columns__column__ctas ctas ctas--desktop">
+          <a href="https://ghop.page.link/main-cta"
+  data-utm-rewrite
+  data-g-event="cta:click"
+  data-g-label="get-started"
+  class="cta__item cta-button start-coding not-ie start-coding--small">
+  <span class="cta-button__label">
+   <span class="cta-button__label__label">Começar</span>
+</span>
+</a>
+
+          <a href="https://play.google.com/store/apps/details?id=com.area120.grasshopper"
+  data-utm-rewrite
+    data-ak-update-params-serialize-into-key="referrer"
+  data-g-event="cta:click"
+  data-g-label="google-play"
+  class="cta__item cta-button google-play no-left-margin-ie">
+  <span class="cta-button__label">
+   <span class="cta-button__label__label">Google Play</span>
+</span>
+</a>
+
+      </div>
+
+      <div class="section-columns__column__ctas ctas ctas--mobile">
+          <a href="https://play.google.com/store/apps/details?id=com.area120.grasshopper"
+  data-utm-rewrite
+    data-ak-update-params-serialize-into-key="referrer"
+  data-g-event="cta:click"
+  data-g-label="start-coding-today"
+  class="cta__item cta-button start-coding android">
+  <span class="cta-button__label">
+   <span class="cta-button__label__label">Comece a programar hoje</span>
+</span>
+</a>
+
+      </div>
+
+    </div>
+    <div class="section-columns__column section-columns__column--two-column section-columns__column--mobile-1x1">
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</section>    </section>
+
+<footer class="footer ">
+  <div class="footer__container">
+      <div class="footer__nav footer__nav--main">
+      <ul class="footer__nav__links">
+        <li class="footer__nav__link ">
+            <a href="/" data-g-event="link:click" data-g-label="home"
+    class="link">
+  <span class="link__label">
+   <span class="link__label__label">Início</span>
+  </span>
+</a>
+        </li>
+        <li class="footer__nav__link ">
+            <a href="/why-coding" data-g-event="link:click" data-g-label="what-is-coding"
+    class="link">
+  <span class="link__label">
+   <span class="link__label__label">O que é programação</span>
+  </span>
+</a>
+        </li>
+        <li class="footer__nav__link ">
+            <a href="/about" data-g-event="link:click" data-g-label="about"
+    class="link">
+  <span class="link__label">
+   <span class="link__label__label">Sobre</span>
+  </span>
+</a>
+        </li>
+      </ul>
+      </div>
+
+    <div class="footer__nav footer__nav--link-nav footer__nav--resource">
+      <ul class="footer__nav__links">
+        <li class="footer__nav__link ">
+            <a href="mailto:grasshopper-support@google.com" data-g-event="link:click" data-g-label="email-us"
+    class="link">
+  <span class="link__label">
+   <span class="link__label__label">Enviar um e-mail</span>
+  </span>
+</a>
+        </li>
+        <li class="footer__nav__link ">
+            <a href="/faq" data-g-event="link:click" data-g-label="faq"
+    class="link">
+  <span class="link__label">
+   <span class="link__label__label">Perguntas frequentes</span>
+  </span>
+</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer__nav footer__nav--link-nav footer__nav--legal">
+      <ul class="footer__nav__links">
+        <li class="footer__nav__link ">
+            <a href="https://policies.google.com/terms?hl=pt-BR" data-g-event="link:click" data-g-label="termos-de-servico"
+    class="link">
+  <span class="link__label">
+   <span class="link__label__label">Termos de Serviço</span>
+  </span>
+</a>
+        </li>
+        <li class="footer__nav__link ">
+            <a href="https://policies.google.com/privacy?hl=pt-BR" data-g-event="link:click" data-g-label="politica-de-privacidade"
+    class="link">
+  <span class="link__label">
+   <span class="link__label__label">Política de privacidade</span>
+  </span>
+</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+    <div class="footer__container">
+      <div class="footer__logo">
+        <a href="https://g.co/codewithgoogle" target="_blank" rel="noreferrer">
+          <img src="/assets/static/images/common/code-with-google.v2.png" alt="Logotipo do Grasshopper">
+        </a>
+      </div>
+    </div>
+</footer>
+    <script type="text/javascript">
+      WebFontConfig = {google:{families:['Google+Sans:300,400,500,600&display=swap']}};
+      (() => {
+          let wf = document.createElement('script');
+          wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+          wf.type = 'text/javascript';
+          wf.async = 'true';
+          let s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="/assets/static/js/main-d7819d6a1b557c6c2f8c14681fde3abd520688a485bd449b77894b5983ace863.min.js"></script>
+  </body>
+</html>
