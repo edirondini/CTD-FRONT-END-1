@@ -1,0 +1,25 @@
+/*
+Podemos usar o background-image usando url('image.png')
+Podemos usar backgound-position para alinhar o texto/palavra, usando: 
+Esqueda(left), Topo(top), direita(right), base (bottom) e centro (center)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap'); /* Importar a fonte do Google Fonts*/
+
+body {
+    background-color: #6df4ff;
+}
+
+.titulo-principal {
+
+    color: #ffffff;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif; /* Mudando o estilo da fonte do título H1, 'Roboto' é a fonte principal, a 'Arial' é a fonte reserva*/
+}
+
+.conteudo-principal {
+    background-position: bottom; /* posição da imagem que aparecerá */
+    background-image: url(fundoAzul.jpg);
+    background-repeat: no-repeat; /*parar de repetir a imagem,caso ela seja pequena demais*/
+    background-size: cover; /*esticar a imagem até o máximo do campo exigido*/
+    height: 300px; /* altura da imagem*/
+
+}
